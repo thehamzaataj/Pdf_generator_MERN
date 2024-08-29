@@ -9,7 +9,7 @@ function App() {
   }, [])
   const fetchNotes = async()=>{
     try{
-      const response = await axios.get('http://localhost:5000/notes');
+      const response = await axios.get('https://pdf-generator-mern.vercel.app/notes');
       setCardNotes(response.data)
     } catch (error) {
       console.error('Error fetching notes:', error);
@@ -22,7 +22,7 @@ function App() {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/notes', note);
+      const response = await axios.post('https://pdf-generator-mern.vercel.app/notes', note);
       setCardNotes([...cardNotes, response.data]);
     } catch (error) {
       console.error('Error adding note:', error);
@@ -31,7 +31,7 @@ function App() {
 
   const handleDeleteNotes = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/notes/${id}`);
+      await axios.delete(`https://pdf-generator-mern.vercel.app/notes/${id}`);
       setCardNotes(cardNotes.filter(note => note._id !== id));
     } catch (error) {
       console.error('Error deleting note:', error);
