@@ -1,0 +1,12 @@
+
+.description-container{
+    max-height: 4.8em; /* Adjust this value to control the visible area */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Adjust the number of lines to show before truncating */
+    -webkit-box-orient: vertical;
+  }
+  .description-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
