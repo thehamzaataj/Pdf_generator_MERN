@@ -5,7 +5,7 @@ import axios from "axios";
 const Card = ({ data, onDelete }) => {
   const handleDownload = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/notes/${data._id}/download`, {
+      const response = await axios.get(`https://pdf-generator-mern.vercel.app/notes/${data._id}/download`, {
         responseType: 'blob'
       });
       const url = window.URL.createObjectURL(new Blob([response.data]));
